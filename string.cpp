@@ -25,9 +25,23 @@ Space Complexity:
 Method:
 */
 
+bool duplicate(int numbers[], int length, int *duplication)
+{
+    for (int i = 0; i < length; i++)
+    {
+        if (numbers[i] < i)
+        {
+            *duplication = numbers[i];
+            return true;
+        }
+        while (i != numbers[i])
+            swap(numbers[i], numbers[numbers[i]]);
+    }
+    return false;
+}
+
 int main()
 {
-    string s = "1234";
-    cout << s.substr(1, 3) + s.substr(0,3) << endl;
+    cout << -3.e-15 << endl;
     return 0;
 }
